@@ -3,3 +3,297 @@
 SCI 與 SCIE 的區別
 
 http://tul.blog.ntu.edu.tw/archives/8333
+
+
+MASTER JOURNAL LIST
+
+http://ip-science.thomsonreuters.com/mjl/
+
+
+sociology's most cited papers by decade
+
+https://kieranhealy.org/blog/archives/2014/11/15/top-ten-by-decade/
+
+
+
+* pdf
+
+http://ip-science.thomsonreuters.com/mjl/publist_sciex.pdf
+
+
+
+
+
+** print TAIWAN from sci.txt 
+#+HEADERS: :results raw
+
+#+BEGIN_SRC sh
+
+t="sci.txt"
+
+awk 'NF > 6 && $(NF - 1) ~ /TAIWAN/' $t |
+awk 'BEGIN{ FS=" \{3,\}"; OFS=", "}{print $(NF-1), $1, $NF, $3}'
+
+
+# awk 'BEGIN{ FS=" \{3,\}"; OFS=", "} {NF > 6 && $(NF - 1) ~ /TAIWAN/}' $t 
+
+# awk '$NF ~ /Chinese/' $t
+
+# awk '$0 ~ /TAIWAN/' $t | awk 'BEGIN{ FS=" \{3,\}"; OFS=", "}{print $(NF-1)}'
+
+# awk '$0 ~ /TAIWAN/' $t | awk 'BEGIN{ FS=" \{3,\}"; OFS=", "}{print $1, $(NF-1), $NF}'
+
+#+END_SRC
+
+#+RESULTS:
+| TAIWAN | Acta Cardiologica Sinica                               | English        | 1011-6842 |
+| TAIWAN | Aerosol and Air Quality Research                       | English        | 1680-8584 |
+| TAIWAN | Botanical Studies                                      | Multi-Language | 1999-3110 |
+| TAIWAN | CHINESE JOURNAL OF PHYSICS                             | English        | 0577-9073 |
+| TAIWAN | CHINESE JOURNAL OF PHYSIOLOGY                          | English        | 0304-4920 |
+| TAIWAN | Dermatologica Sinica                                   | English        | 1027-8117 |
+| TAIWAN | International Journal of Design                        | English        | 1991-3761 |
+| TAIWAN | International Journal of Fuzzy Systems                 | English        | 1562-2479 |
+| TAIWAN | International Journal of Gerontology                   | English        | 1873-9598 |
+| TAIWAN | Journal of Dental Sciences                             | English        | 1991-7902 |
+| TAIWAN | Journal of Internet Technology                         | English        | 1607-9264 |
+| TAIWAN | Journal of Marine Science and Technology-Taiwan        | English        | 1023-2796 |
+| TAIWAN | Journal of Medical and Biological Engineering          | English        | 1609-0985 |
+| TAIWAN | Journal of Nursing Research                            | English        | 1682-3141 |
+| TAIWAN | Journal of the Chinese Medical Association             | English        | 1726-4901 |
+| TAIWAN | Journal of the Chinese Society of Mechanical Engineers | English        | 0257-9731 |
+| TAIWAN | Journal of the Taiwan Institute of Chemical Engineers  | English        | 1876-1070 |
+| TAIWAN | JOURNAL OF BIOMEDICAL SCIENCE                          | English        | 1021-7770 |
+| TAIWAN | JOURNAL OF FOOD AND DRUG ANALYSIS                      | Multi-Language | 1021-9498 |
+| TAIWAN | JOURNAL OF INFORMATION SCIENCE AND ENGINEERING         | English        | 1016-2364 |
+| TAIWAN | JOURNAL OF MECHANICS                                   | English        | 1727-7191 |
+| TAIWAN | JOURNAL OF MICROBIOLOGY IMMUNOLOGY AND INFECTION       | English        | 1684-1182 |
+| TAIWAN | JOURNAL OF POLYMER RESEARCH                            | English        | 1022-9760 |
+| TAIWAN | JOURNAL OF THE CHINESE CHEMICAL SOCIETY                | English        | 0009-4536 |
+| TAIWAN | JOURNAL OF THE CHINESE INSTITUTE OF ENGINEERS          | English        | 0253-3839 |
+| TAIWAN | JOURNAL OF THE FORMOSAN MEDICAL ASSOCIATION            | English        | 0929-6646 |
+| TAIWAN | KAOHSIUNG JOURNAL OF MEDICAL SCIENCES                  | English        | 1607-551X |
+| TAIWAN | Pediatrics and Neonatology                             | English        | 1875-9572 |
+| TAIWAN | Quality Technology and Quantitative Management         | English        | 1684-3703 |
+| TAIWAN | STATISTICA SINICA                                      | English        | 1017-0405 |
+| TAIWAN | Taiwanese Journal of Obstetrics & Gynecology           | English        | 1028-4559 |
+| TAIWAN | TAIWANESE JOURNAL OF MATHEMATICS                       | English        | 1027-5487 |
+| TAIWAN | TERRESTRIAL ATMOSPHERIC AND OCEANIC SCIENCES           | English        | 1017-0839 |
+| TAIWAN | ZOOLOGICAL STUDIES                                     | English        | 1021-5506 |
+
+** language Chinese from sci.txt 
+
+#+HEADERS: :results raw
+#+BEGIN_SRC sh
+
+t="sci.txt"
+
+awk '$NF ~ /Chinese/' $t
+
+# awk '$0 ~ /TAIWAN/ {print $2}' $t
+
+#+END_SRC
+
+#+RESULTS:
+ACTA CHIMICA SINICA                                      SCIENCE PRESS                                                       0567-7351               PEOPLES R CHINA   Chinese
+ACTA METALLURGICA SINICA                                 SCIENCE PRESS                                                       0412-1961               PEOPLES R CHINA   Chinese
+ACTA PETROLOGICA SINICA                                  SCIENCE PRESS                                                       1000-0569   2095-8927   PEOPLES R CHINA   Chinese
+ACTA PHYSICA SINICA                                        CHINESE PHYSICAL SOC                                         1000-3290               PEOPLES R CHINA   Chinese
+ACTA PHYSICO-CHIMICA SINICA                                PEKING UNIV PRESS                                            1000-6818               PEOPLES R CHINA   Chinese
+ACTA POLYMERICA SINICA                                     SCIENCE PRESS                                                1000-3304               PEOPLES R CHINA   Chinese
+Chinese Journal of Natural Medicines                                CHINESE JOURNAL NATURAL MEDICINES                             2095-6975   1875-5364   PEOPLES R CHINA   Chinese
+CHEMICAL JOURNAL OF CHINESE UNIVERSITIES-CHINESE                    HIGHER EDUCATION PRESS                                        0251-0790   0251-0790   PEOPLES R CHINA   Chinese
+CHINESE JOURNAL OF ANALYTICAL CHEMISTRY                  ELSEVIER SCIENCE INC                                                0253-3820   1872-2040   PEOPLES R CHINA   Chinese
+CHINESE JOURNAL OF CHEMICAL PHYSICS                      CHINESE PHYSICAL SOC                                                1674-0068   1003-7713   PEOPLES R CHINA   Chinese
+CHINESE JOURNAL OF GEOPHYSICS-CHINESE EDITION            SCIENCE PRESS                                                       0001-5733   0001-5733   PEOPLES R CHINA   Chinese
+CHINESE JOURNAL OF INORGANIC CHEMISTRY                   CHINESE CHEMICAL SOC                                                1001-4861   1001-4861   PEOPLES R CHINA   Chinese
+CHINESE JOURNAL OF ORGANIC CHEMISTRY                     SCIENCE PRESS                                                       0253-2786   0253-2786   PEOPLES R CHINA   Chinese
+JOURNAL OF INFRARED AND MILLIMETER WAVES                   SCIENCE PRESS                                            1001-9014               PEOPLES R CHINA   Chinese
+JOURNAL OF INORGANIC MATERIALS                             SCIENCE PRESS                                            1000-324X               PEOPLES R CHINA   Chinese
+NEW CARBON MATERIALS                                                    ELSEVIER SCIENCE BV                                     1007-8827               PEOPLES R CHINA   Chinese
+Petroleum Exploration and Development                        ELSEVIER SCIENCE BV                                         1000-0747               PEOPLES R CHINA   Chinese
+PROGRESS IN BIOCHEMISTRY AND BIOPHYSICS                                                           CHINESE ACAD SCIENCES, INST BIOPHYSICS                   1000-3282   1000-3282   PEOPLES R CHINA   Chinese
+PROGRESS IN CHEMISTRY                                                                             CHINESE ACAD SCIENCES                                    1005-281X   1005-281X   PEOPLES R CHINA   Chinese
+RARE METAL MATERIALS AND ENGINEERING                                     NORTHWEST INST NONFERROUS METAL RESEARCH                1002-185X   1002-185X   PEOPLES R CHINA   Chinese
+RARE METALS                                                              NONFERROUS METALS SOC CHINA                             1001-0521   1867-7185   PEOPLES R CHINA   Chinese
+SPECTROSCOPY AND SPECTRAL ANALYSIS                                           OFFICE SPECTROSCOPY & SPECTRAL ANALYSIS                     1000-0593   1000-0593   PEOPLES R CHINA   Chinese
+
+
+
+
+** print Chinese from sci.txt 
+
+#+HEADERS: :results raw
+#+BEGIN_SRC sh
+
+t="sci.txt"
+
+awk '$0 ~ /Chinese/' $t
+
+# awk '$0 ~ /TAIWAN/ {print $2}' $t
+
+#+END_SRC
+
+#+RESULTS:
+ACTA CHIMICA SINICA                                      SCIENCE PRESS                                                       0567-7351               PEOPLES R CHINA   Chinese
+ACTA METALLURGICA SINICA                                 SCIENCE PRESS                                                       0412-1961               PEOPLES R CHINA   Chinese
+ACTA PETROLOGICA SINICA                                  SCIENCE PRESS                                                       1000-0569   2095-8927   PEOPLES R CHINA   Chinese
+ACTA PHYSICA SINICA                                        CHINESE PHYSICAL SOC                                         1000-3290               PEOPLES R CHINA   Chinese
+ACTA PHYSICO-CHIMICA SINICA                                PEKING UNIV PRESS                                            1000-6818               PEOPLES R CHINA   Chinese
+ACTA POLYMERICA SINICA                                     SCIENCE PRESS                                                1000-3304               PEOPLES R CHINA   Chinese
+Applied Mathematics-A Journal of Chinese Universities Series B   SPRINGER                                                          1005-1031   1993-0445   PEOPLES R CHINA   English
+Chinese Geographical Science                                        SPRINGER                                                      1002-0063   1993-064X   PEOPLES R CHINA   English
+Chinese Journal of Aeronautics                                      ELSEVIER SCIENCE INC                                          1000-9361               PEOPLES R CHINA   English
+Chinese Journal of Cancer                                           SUN YAT SEN UNIV MED SCI WHO                                  1000-467X   1944-446X   PEOPLES R CHINA   English
+Chinese Journal of Cancer Research                                  CHINESE JOURNAL CANCER RESEARCH CO                            1000-9604   1993-0631   PEOPLES R CHINA   English
+Chinese Journal of Integrative Medicine                             SPRINGER                                                      1672-0415   1993-0402   PEOPLES R CHINA   English
+Chinese Journal of Mechanical Engineering                           EDITORIAL OFFICE CHINESE JOURNAL MECHANICAL ENGINEERING       1000-9345   2192-8258   PEOPLES R CHINA   English
+Chinese Journal of Natural Medicines                                CHINESE JOURNAL NATURAL MEDICINES                             2095-6975   1875-5364   PEOPLES R CHINA   Chinese
+Chinese Medicine                                                    BIOMED CENTRAL LTD                                            1749-8546   1749-8546   ENGLAND           English
+Chinese Optics Letters                                              CHINESE LASER PRESS                                           1671-7694   1671-7694   PEOPLES R CHINA   English
+Chinese Physics B                                                   IOP PUBLISHING LTD                                            1674-1056   1741-4199   PEOPLES R CHINA   English
+Chinese Physics C                                                   CHINESE PHYSICAL SOC                                          1674-1137               PEOPLES R CHINA   English
+CHEMICAL JOURNAL OF CHINESE UNIVERSITIES-CHINESE                    HIGHER EDUCATION PRESS                                        0251-0790   0251-0790   PEOPLES R CHINA   Chinese
+CHINESE JOURNAL OF ANALYTICAL CHEMISTRY                  ELSEVIER SCIENCE INC                                                0253-3820   1872-2040   PEOPLES R CHINA   Chinese
+CHINESE JOURNAL OF CHEMICAL PHYSICS                      CHINESE PHYSICAL SOC                                                1674-0068   1003-7713   PEOPLES R CHINA   Chinese
+CHINESE JOURNAL OF GEOPHYSICS-CHINESE EDITION            SCIENCE PRESS                                                       0001-5733   0001-5733   PEOPLES R CHINA   Chinese
+CHINESE JOURNAL OF INORGANIC CHEMISTRY                   CHINESE CHEMICAL SOC                                                1001-4861   1001-4861   PEOPLES R CHINA   Chinese
+CHINESE JOURNAL OF ORGANIC CHEMISTRY                     SCIENCE PRESS                                                       0253-2786   0253-2786   PEOPLES R CHINA   Chinese
+Journal of the Chinese Medical Association                                  ELSEVIER TAIWAN                                         1726-4901   1728-7731   TAIWAN            English
+Journal of the Chinese Society of Mechanical Engineers                      CHINESE SOC MECHANICAL ENGINEERS                        0257-9731               TAIWAN            English
+Journal of Traditional Chinese Medicine                                     JOURNAL TRADITIONAL CHINESE MED                         0255-2922   1577-7014   PEOPLES R CHINA   English
+JOURNAL OF INFRARED AND MILLIMETER WAVES                   SCIENCE PRESS                                            1001-9014               PEOPLES R CHINA   Chinese
+JOURNAL OF INORGANIC MATERIALS                             SCIENCE PRESS                                            1000-324X               PEOPLES R CHINA   Chinese
+NEW CARBON MATERIALS                                                    ELSEVIER SCIENCE BV                                     1007-8827               PEOPLES R CHINA   Chinese
+Petroleum Exploration and Development                        ELSEVIER SCIENCE BV                                         1000-0747               PEOPLES R CHINA   Chinese
+PROGRESS IN BIOCHEMISTRY AND BIOPHYSICS                                                           CHINESE ACAD SCIENCES, INST BIOPHYSICS                   1000-3282   1000-3282   PEOPLES R CHINA   Chinese
+PROGRESS IN CHEMISTRY                                                                             CHINESE ACAD SCIENCES                                    1005-281X   1005-281X   PEOPLES R CHINA   Chinese
+RARE METAL MATERIALS AND ENGINEERING                                     NORTHWEST INST NONFERROUS METAL RESEARCH                1002-185X   1002-185X   PEOPLES R CHINA   Chinese
+RARE METALS                                                              NONFERROUS METALS SOC CHINA                             1001-0521   1867-7185   PEOPLES R CHINA   Chinese
+SPECTROSCOPY AND SPECTRAL ANALYSIS                                           OFFICE SPECTROSCOPY & SPECTRAL ANALYSIS                     1000-0593   1000-0593   PEOPLES R CHINA   Chinese
+
+
+
+
+
+** print TAIWAN from sci.txt 
+
+#+HEADERS: :results raw
+#+BEGIN_SRC sh
+
+t="sci.txt"
+
+awk '$0 ~ /TAIWAN/' $t
+
+# awk '$0 ~ /TAIWAN/ {print $2}' $t
+
+#+END_SRC
+
+#+RESULTS:
+Acta Cardiologica Sinica                                                                TAIWAN SOC CARDIOLOGY                                      1011-6842               TAIWAN            English
+Aerosol and Air Quality Research                              TAIWAN ASSOC AEROSOL RES-TAAR                               1680-8584   2071-1409   TAIWAN           English
+Botanical Studies                                                          SPRINGER                                                           1999-3110   1999-3110   TAIWAN            Multi-Language
+CHINESE JOURNAL OF PHYSICS                               ELSEVIER SCIENCE BV                                                 0577-9073   0577-9073   TAIWAN            English
+CHINESE JOURNAL OF PHYSIOLOGY                            CHINESE PHYSIOLOGICAL SOC                                           0304-4920   0304-4920   TAIWAN            English
+Dermatologica Sinica                                        ELSEVIER TAIWAN                                        1027-8117   2223-330X   TAIWAN            English
+International Journal of Design                                         NATL TAIWAN UNIV SCI & TECHNOL                          1991-3761   1994-036X   TAIWAN            English
+International Journal of Fuzzy Systems                                              SPRINGER                                                1562-2479   2199-3211   TAIWAN            English
+International Journal of Gerontology                                                ELSEVIER TAIWAN                                         1873-9598   1873-958X   TAIWAN            English
+Journal of Dental Sciences                                                   ELSEVIER TAIWAN                                         1991-7902               TAIWAN            English
+Journal of Internet Technology                                        NATL ILAN UNIV, JIT                                     1607-9264   2079-4029   TAIWAN            English
+Journal of Marine Science and Technology-Taiwan                       NATL TAIWAN OCEAN UNIV                                  1023-2796               TAIWAN            English
+Journal of Medical and Biological Engineering                         SPRINGER HEIDELBERG                                     1609-0985   2199-4757   TAIWAN            English
+Journal of Nursing Research                                            LIPPINCOTT WILLIAMS & WILKINS                           1682-3141   1682-3141   TAIWAN            English
+Journal of the Chinese Medical Association                                  ELSEVIER TAIWAN                                         1726-4901   1728-7731   TAIWAN            English
+Journal of the Chinese Society of Mechanical Engineers                      CHINESE SOC MECHANICAL ENGINEERS                        0257-9731               TAIWAN            English
+Journal of the Taiwan Institute of Chemical Engineers                       ELSEVIER SCIENCE BV                                     1876-1070   1876-1089   TAIWAN            English
+JOURNAL OF BIOMEDICAL SCIENCE                                          BIOMED CENTRAL LTD                                      1021-7770   1423-0127   TAIWAN           English
+JOURNAL OF FOOD AND DRUG ANALYSIS                          FOOD & DRUG ADMINSTRATION                               1021-9498   1021-9498   TAIWAN            Multi-Language
+JOURNAL OF INFORMATION SCIENCE AND ENGINEERING             INST INFORMATION SCIENCE                                 1016-2364               TAIWAN            English
+JOURNAL OF MECHANICS                                    CAMBRIDGE UNIV PRESS                                      1727-7191   1811-8216   TAIWAN           English
+JOURNAL OF MICROBIOLOGY IMMUNOLOGY AND INFECTION        ELSEVIER TAIWAN                                           1684-1182   1995-9133   TAIWAN           English
+JOURNAL OF POLYMER RESEARCH                                            SPRINGER                                                1022-9760   1572-8935   TAIWAN            English
+JOURNAL OF THE CHINESE CHEMICAL SOCIETY                              WILEY-V C H VERLAG GMBH                                0009-4536   2192-6549   TAIWAN           English
+JOURNAL OF THE CHINESE INSTITUTE OF ENGINEERS                        CHINESE INST ENGINEERS                                 0253-3839   2158-7299   TAIWAN           English
+JOURNAL OF THE FORMOSAN MEDICAL ASSOCIATION                                                     ELSEVIER TAIWAN                                      0929-6646   1876-0821   TAIWAN           English
+KAOHSIUNG JOURNAL OF MEDICAL SCIENCES                          ELSEVIER TAIWAN                                         1607-551X               TAIWAN           English
+Pediatrics and Neonatology                                   ELSEVIER TAIWAN                                             1875-9572               TAIWAN            English
+Quality Technology and Quantitative Management                NCTU-NATIONAL CHIAO TUNG UNIV PRESS                    1684-3703   1811-4857   TAIWAN           English
+STATISTICA SINICA                                           STATISTICA SINICA                                       1017-0405   1996-8507   TAIWAN           English
+Taiwanese Journal of Obstetrics & Gynecology                                   ELSEVIER TAIWAN                                                     1028-4559               TAIWAN           English
+TAIWANESE JOURNAL OF MATHEMATICS                                               MATHEMATICAL SOC REP CHINA                                          1027-5487   2224-6851   TAIWAN           English
+TERRESTRIAL ATMOSPHERIC AND OCEANIC SCIENCES                       CHINESE GEOSCIENCE UNION                                1017-0839   2311-7680   TAIWAN            English
+ZOOLOGICAL STUDIES                                                                               BIODIVERSITY RESEARCH CENTER, ACAD SINICA                1021-5506   1810-522X   TAIWAN          English
+
+
+
+
+** to sci.txt
+
+#+HEADERS: :results raw
+#+BEGIN_SRC sh
+
+f="publist_sciex.pdf"
+
+pdftotext -layout $f sci.txt
+
+#+END_SRC
+
+#+RESULTS:
+
+
+
+
+** select TAIWAN
+
+#+HEADERS: :results raw
+#+BEGIN_SRC sh
+
+f="publist_sciex.pdf"
+
+# echo $f
+
+# ls
+
+# pdftotext -layout $f - | awk 'BEGIN{FS="  "} $0 ~ /TAIWAN/ {print $2}'
+
+pdftotext -layout $f - | awk '$0 ~ /TAIWAN/'
+
+#+END_SRC
+
+#+RESULTS:
+Acta Cardiologica Sinica                                                                TAIWAN SOC CARDIOLOGY                                      1011-6842               TAIWAN            English
+Aerosol and Air Quality Research                              TAIWAN ASSOC AEROSOL RES-TAAR                               1680-8584   2071-1409   TAIWAN           English
+Botanical Studies                                                          SPRINGER                                                           1999-3110   1999-3110   TAIWAN            Multi-Language
+CHINESE JOURNAL OF PHYSICS                               ELSEVIER SCIENCE BV                                                 0577-9073   0577-9073   TAIWAN            English
+CHINESE JOURNAL OF PHYSIOLOGY                            CHINESE PHYSIOLOGICAL SOC                                           0304-4920   0304-4920   TAIWAN            English
+Dermatologica Sinica                                        ELSEVIER TAIWAN                                        1027-8117   2223-330X   TAIWAN            English
+International Journal of Design                                         NATL TAIWAN UNIV SCI & TECHNOL                          1991-3761   1994-036X   TAIWAN            English
+International Journal of Fuzzy Systems                                              SPRINGER                                                1562-2479   2199-3211   TAIWAN            English
+International Journal of Gerontology                                                ELSEVIER TAIWAN                                         1873-9598   1873-958X   TAIWAN            English
+Journal of Dental Sciences                                                   ELSEVIER TAIWAN                                         1991-7902               TAIWAN            English
+Journal of Internet Technology                                        NATL ILAN UNIV, JIT                                     1607-9264   2079-4029   TAIWAN            English
+Journal of Marine Science and Technology-Taiwan                       NATL TAIWAN OCEAN UNIV                                  1023-2796               TAIWAN            English
+Journal of Medical and Biological Engineering                         SPRINGER HEIDELBERG                                     1609-0985   2199-4757   TAIWAN            English
+Journal of Nursing Research                                            LIPPINCOTT WILLIAMS & WILKINS                           1682-3141   1682-3141   TAIWAN            English
+Journal of the Chinese Medical Association                                  ELSEVIER TAIWAN                                         1726-4901   1728-7731   TAIWAN            English
+Journal of the Chinese Society of Mechanical Engineers                      CHINESE SOC MECHANICAL ENGINEERS                        0257-9731               TAIWAN            English
+Journal of the Taiwan Institute of Chemical Engineers                       ELSEVIER SCIENCE BV                                     1876-1070   1876-1089   TAIWAN            English
+JOURNAL OF BIOMEDICAL SCIENCE                                          BIOMED CENTRAL LTD                                      1021-7770   1423-0127   TAIWAN           English
+JOURNAL OF FOOD AND DRUG ANALYSIS                          FOOD & DRUG ADMINSTRATION                               1021-9498   1021-9498   TAIWAN            Multi-Language
+JOURNAL OF INFORMATION SCIENCE AND ENGINEERING             INST INFORMATION SCIENCE                                 1016-2364               TAIWAN            English
+JOURNAL OF MECHANICS                                    CAMBRIDGE UNIV PRESS                                      1727-7191   1811-8216   TAIWAN           English
+JOURNAL OF MICROBIOLOGY IMMUNOLOGY AND INFECTION        ELSEVIER TAIWAN                                           1684-1182   1995-9133   TAIWAN           English
+JOURNAL OF POLYMER RESEARCH                                            SPRINGER                                                1022-9760   1572-8935   TAIWAN            English
+JOURNAL OF THE CHINESE CHEMICAL SOCIETY                              WILEY-V C H VERLAG GMBH                                0009-4536   2192-6549   TAIWAN           English
+JOURNAL OF THE CHINESE INSTITUTE OF ENGINEERS                        CHINESE INST ENGINEERS                                 0253-3839   2158-7299   TAIWAN           English
+JOURNAL OF THE FORMOSAN MEDICAL ASSOCIATION                                                     ELSEVIER TAIWAN                                      0929-6646   1876-0821   TAIWAN           English
+KAOHSIUNG JOURNAL OF MEDICAL SCIENCES                          ELSEVIER TAIWAN                                         1607-551X               TAIWAN           English
+Pediatrics and Neonatology                                   ELSEVIER TAIWAN                                             1875-9572               TAIWAN            English
+Quality Technology and Quantitative Management                NCTU-NATIONAL CHIAO TUNG UNIV PRESS                    1684-3703   1811-4857   TAIWAN           English
+STATISTICA SINICA                                           STATISTICA SINICA                                       1017-0405   1996-8507   TAIWAN           English
+Taiwanese Journal of Obstetrics & Gynecology                                   ELSEVIER TAIWAN                                                     1028-4559               TAIWAN           English
+TAIWANESE JOURNAL OF MATHEMATICS                                               MATHEMATICAL SOC REP CHINA                                          1027-5487   2224-6851   TAIWAN           English
+TERRESTRIAL ATMOSPHERIC AND OCEANIC SCIENCES                       CHINESE GEOSCIENCE UNION                                1017-0839   2311-7680   TAIWAN            English
+ZOOLOGICAL STUDIES                                                                               BIODIVERSITY RESEARCH CENTER, ACAD SINICA                1021-5506   1810-522X   TAIWAN          English
+

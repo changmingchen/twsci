@@ -14,7 +14,36 @@ sociology's most cited papers by decade
 
 https://kieranhealy.org/blog/archives/2014/11/15/top-ten-by-decade/
 
+* scrapy
 
+** Populating an item
+| tasks                           |
+|---------------------------------|
+| import class                    |
+|                                 |
+| instantiate and return one item |
+|                                 |
+| assign                          |
+|                                 |
+| return the item                 |
+|                                 |
+
+
+| the file to be edited        | properties/spiders/basic.py                 |
+|                              |                                             |
+|------------------------------+---------------------------------------------|
+| the class to be imported     | from properties.items import PropertiesItem |
+|                              |                                             |
+| the file contains the module | properties/items.py                         |
+|                              |                                             |
+
+|        | purpose |
+|--------+---------|
+| spider |         |
+|        |         |
+| item   |         |
+|        |         |
+| pipe   |         |
 
 * pdf
 
@@ -296,4 +325,5 @@ Taiwanese Journal of Obstetrics & Gynecology                                   E
 TAIWANESE JOURNAL OF MATHEMATICS                                               MATHEMATICAL SOC REP CHINA                                          1027-5487   2224-6851   TAIWAN           English
 TERRESTRIAL ATMOSPHERIC AND OCEANIC SCIENCES                       CHINESE GEOSCIENCE UNION                                1017-0839   2311-7680   TAIWAN            English
 ZOOLOGICAL STUDIES                                                                               BIODIVERSITY RESEARCH CENTER, ACAD SINICA                1021-5506   1810-522X   TAIWAN          English
+
 
